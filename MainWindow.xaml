@@ -1,0 +1,160 @@
+﻿<Window x:Class="COSHH_Generator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:COSHH_Generator"
+        mc:Ignorable="d"
+        Title="COSHH Generator" Height="720" Width="1080">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.05*"></RowDefinition>
+            <RowDefinition Height="0.7*"></RowDefinition>
+            <RowDefinition Height="0.05*"></RowDefinition>
+            <RowDefinition Height="0.2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBox Name="titleTextBox" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center">
+                Title
+            </TextBox>
+            <TextBox Name="nameTextBox" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center">
+                Name
+            </TextBox>
+            <TextBox Name="collegeTextBox" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center">
+                College
+            </TextBox>
+            <TextBox Name="yearTextBox" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center">
+                Year
+            </TextBox>
+            <TextBox Name="dateTextBox" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" VerticalContentAlignment="Center">
+                Date
+            </TextBox>
+        </Grid>
+        
+
+        <ListBox Name="substanceListBox" HorizontalContentAlignment="Stretch" KeyboardNavigation.TabNavigation ="Contained" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+        </ListBox>
+        
+        
+        
+        <Button Name="AddNewSubstanceButton" Grid.Row="2" Grid.Column="0" Click="AddNewSubstance" IsTabStop="False">Add substance</Button>
+        <Button Name="CLearButton" Grid.Row="2" Grid.Column="1" Click="Clear" IsTabStop="False">Clear</Button>
+        <Button Name="generateButton" Grid.Row="2" Grid.Column="2" Click="Generate" IsTabStop="False">Generate</Button>
+        
+        <Grid Grid.Row="4" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">
+                Fire or Explosion
+                </TextBlock>
+                <CheckBox Name="fireExplosionCheckbox" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1">
+                </CheckBox>
+
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0">
+                Thermal Runaway
+                </TextBlock>
+                <CheckBox Name="thermalRunawayCheckbox" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1">
+                </CheckBox>
+
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0">
+                Gas Release
+                </TextBlock>
+                <CheckBox Name="gasReleaseCheckbox" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1">
+                </CheckBox>
+
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0">
+                Malodorous Substances
+                </TextBlock>
+                <CheckBox Name="malodorousSubstancesCheckbox" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1">
+                </CheckBox>
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0">
+                Special measures
+                </TextBlock>
+                <CheckBox Name="specialMeasuresCheckbox" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1">
+                </CheckBox>
+
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">
+                Halogenated
+                </TextBlock>
+                <CheckBox Name="halogenatedCheckBox" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1">
+                </CheckBox>
+
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0">
+                Hydrocarbon
+                </TextBlock>
+                <CheckBox Name="hydrocarbonCheckBox" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1">
+                </CheckBox>
+
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0">
+                Contaminated solid waste
+                </TextBlock>
+                <CheckBox Name="contaminatedCheckBox" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1">
+                </CheckBox>
+
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0">
+                Aqueous
+                </TextBlock>
+                <CheckBox Name="aqueousCheckBox" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1">
+                </CheckBox>
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0">
+                Named Waste
+                </TextBlock>
+                <CheckBox Name="namedWasteCheckBox" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1">
+                </CheckBox>
+                <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" Grid.Row="5" Grid.Column="0">
+                Silica/TLC
+                </TextBlock>
+                <CheckBox Name="silicaTLCCheckBox" VerticalAlignment="Center" Grid.Row="5" Grid.Column="1">
+                </CheckBox>
+                
+
+            </Grid>
+        </Grid>
+
+    </Grid>
+
+
+
+</Window>
